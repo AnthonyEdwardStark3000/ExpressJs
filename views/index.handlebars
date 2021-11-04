@@ -1,0 +1,41 @@
+<h1 style="text-align:center">members</h1>
+<form action="/api/members" method="POST">
+
+<div class="container">
+<p style="text-align: center;"><b>{{{content}}}</b></p>
+<h2><b>Displaying the statically read data using the handlebars in index.js</b></h2>
+<p style="text-align: center;margin: top 12px;"><b>Trying to read all the members in the hardcoded js file.</b></p>
+<ul class="list-group">
+    {{#each members}}
+    <li class="list-group-item"> Name :{{this.name}} <br>Email :  {{this.email}}</li>
+    {{/each}}
+</ul>
+    <br>
+    <h2 style="text-align: center;color:red;font-weight:bold">Tring to read and display the dynamic one</h2>
+    <br>
+
+{{!-- Similar to the api the form action indicates the place where the action will be reflected
+and the forms below are to read and send the data.
+ --}}
+ {{!-- Read name --}}
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" class="form-control">
+    </div>
+</form>
+
+ {{!-- Read name --}}
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" name="age" class="form-control">
+    </div>
+</form>
+
+ {{!-- Read mail and the name in the input type is used to pass the data--}}
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" class="form-control">
+    </div>
+</form>
+    <input type="submit" value="Add member" class="btn btn-primary btn-block">
+</div>
